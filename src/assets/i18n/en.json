@@ -244,9 +244,15 @@
         "TOOLTIP": "Open exam files",
         "EXAMPLE_NET": "Example Net",
         "MK": "MK",
+        "PMSS26": {
+            "NAME": "Summer School",
+            "SHELTER": "Animal Shelter",
+            "ADOPTION": "Adoption Process"
+        },
         "SS24": "SS24",
         "SS25": "SS25",
         "WS24": "WS24",
+        "WS25": "WS25",
         "TASK1": "Task 1",
         "TASK2": "Task 2"
     }

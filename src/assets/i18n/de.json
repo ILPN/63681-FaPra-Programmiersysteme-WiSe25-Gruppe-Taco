@@ -245,9 +245,15 @@
         "TOOLTIP": "Klausuraufgaben öffnen",
         "EXAMPLE_NET": "Beispielnetz",
         "MK": "MK",
+        "PMSS26": {
+            "NAME": "Summer School",
+            "SHELTER": "Tierheim",
+            "ADOPTION": "Vermittlungsprozess"
+        },
         "SS24": "SS24",
         "SS25": "SS25",
         "WS24": "WS24",
+        "WS25": "WS25",
         "TASK1": "Aufgabe 1",
         "TASK2": "Aufgabe 2"
     }

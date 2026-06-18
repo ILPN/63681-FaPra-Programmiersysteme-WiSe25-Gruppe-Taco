@@ -1,0 +1,95 @@
+{
+  "places": [
+    "cats",
+    "slots",
+    "dogs",
+    "nointern",
+    "intern"
+  ],
+  "transitions": [
+    "getcat",
+    "sellcat",
+    "getdog",
+    "selldog",
+    "selldogkeeptwo",
+    "hire",
+    "release"
+  ],
+  "arcs": {
+    "slots,getcat": 1,
+    "getcat,cats": 1,
+    "cats,sellcat": 1,
+    "sellcat,slots": 1,
+    "slots,getdog": 1,
+    "getdog,dogs": 1,
+    "dogs,selldogkeeptwo": 3,
+    "selldogkeeptwo,dogs": 2,
+    "selldogkeeptwo,slots": 1,
+    "dogs,selldog": 1,
+    "selldog,slots": 1,
+    "selldog,nointern": 1,
+    "nointern,selldog": 1,
+    "dogs,hire": 2,
+    "hire,dogs": 2,
+    "nointern,hire": 1,
+    "hire,intern": 1,
+    "intern,release": 1,
+    "release,nointern": 1
+  },
+  "actions": [],
+  "marking": {
+    "slots": 5,
+    "nointern": 1
+  },
+  "labels": {},
+  "layout": {
+    "cats": {
+      "x": 123.07502049028513,
+      "y": 222.76808684265393
+    },
+    "slots": {
+      "x": 397.1595484504443,
+      "y": 214.9135003028345
+    },
+    "dogs": {
+      "x": 672.2936284156816,
+      "y": 174.78400352332903
+    },
+    "nointern": {
+      "x": 684.9071122837054,
+      "y": 368.0744428324544
+    },
+    "intern": {
+      "x": 924.0416473042526,
+      "y": 360.0601157173353
+    },
+    "getcat": {
+      "x": 255.41087322871445,
+      "y": 141.87634173248318
+    },
+    "sellcat": {
+      "x": 259.919414020075,
+      "y": 295.3904714004252
+    },
+    "getdog": {
+      "x": 533.918586158119,
+      "y": 194.25018208876634
+    },
+    "selldog": {
+      "x": 552.4468918952296,
+      "y": 286.11648430684676
+    },
+    "selldogkeeptwo": {
+      "x": 527.8376420743231,
+      "y": 109.81123977808807
+    },
+    "hire": {
+      "x": 799.9842661237609,
+      "y": 262.5112151599413
+    },
+    "release": {
+      "x": 809.6781683745292,
+      "y": 463.64602519482514
+    }
+  }
+}

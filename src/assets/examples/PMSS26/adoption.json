@@ -1,0 +1,114 @@
+{
+  "places": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8"
+  ],
+  "transitions": [
+    "registeranimal",
+    "treatanimal",
+    "preparepapers",
+    "recievefromanothershelter",
+    "checkclient",
+    "rejectadoption",
+    "approveadoption",
+    "handoveranimal"
+  ],
+  "arcs": {
+    "p1,registeranimal": 1,
+    "registeranimal,p2": 1,
+    "p2,treatanimal": 1,
+    "treatanimal,p3": 1,
+    "p3,preparepapers": 1,
+    "preparepapers,p4": 1,
+    "registeranimal,p5": 1,
+    "p1,recievefromanothershelter": 1,
+    "recievefromanothershelter,p5": 1,
+    "recievefromanothershelter,p4": 1,
+    "p5,checkclient": 1,
+    "checkclient,p6": 1,
+    "p6,rejectadoption": 1,
+    "rejectadoption,p5": 1,
+    "p6,approveadoption": 1,
+    "approveadoption,p7": 1,
+    "p7,handoveranimal": 1,
+    "handoveranimal,p8": 1,
+    "p4,handoveranimal": 1
+  },
+  "actions": [],
+  "marking": {
+    "p1": 1
+  },
+  "labels": {},
+  "layout": {
+    "p1": {
+      "x": 238.68939608798533,
+      "y": 193.0989674157841
+    },
+    "p2": {
+      "x": 491.55035400390625,
+      "y": 85.30228424072266
+    },
+    "p3": {
+      "x": 768.58837890625,
+      "y": 86.99882507324219
+    },
+    "p4": {
+      "x": 1088.376953125,
+      "y": 88.88468933105469
+    },
+    "p5": {
+      "x": 527.1622009277344,
+      "y": 318.4859619140625
+    },
+    "p6": {
+      "x": 819.1655883789062,
+      "y": 321.25238037109375
+    },
+    "p7": {
+      "x": 1092.04345703125,
+      "y": 324.00689697265625
+    },
+    "p8": {
+      "x": 1400.0626220703125,
+      "y": 217.68783569335938
+    },
+    "registeranimal": {
+      "x": 376.6167789407302,
+      "y": 190.7635865971824
+    },
+    "treatanimal": {
+      "x": 622.6144592249592,
+      "y": 87.27830719210266
+    },
+    "preparepapers": {
+      "x": 924.1556396484375,
+      "y": 88.76023864746094
+    },
+    "recievefromanothershelter": {
+      "x": 380.680908203125,
+      "y": 319.9032287597656
+    },
+    "checkclient": {
+      "x": 671.0892333984375,
+      "y": 323.9446716308594
+    },
+    "rejectadoption": {
+      "x": 672.4353637695312,
+      "y": 441.0596008300781
+    },
+    "approveadoption": {
+      "x": 950.6356201171875,
+      "y": 322.63409423828125
+    },
+    "handoveranimal": {
+      "x": 1247.965576171875,
+      "y": 220.29122924804688
+    }
+  }
+}
