@@ -10,6 +10,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { TabStateService } from '../../../services/tab-state.service';
 import { Tab } from '../../../classes/tabs';
 import { GRAPH_IDS } from '../../display/display.constants';
+import { ReachabilityGraphSavingService } from '../../../services/reachability-graph-saving.service';
 
 @Component({
     selector: 'app-save',
@@ -19,6 +20,7 @@ import { GRAPH_IDS } from '../../display/display.constants';
 })
 export class SaveComponent {
     private _petriNetSavingService = inject(PetriNetSavingService);
+    private _reachabilityGraphSavingService = inject(ReachabilityGraphSavingService);
     private _displayService = inject(DisplayService);
     private _tabsStateService = inject(TabStateService);
     private _diagramSignal = toSignal(this._displayService.diagram$);
@@ -26,12 +28,19 @@ export class SaveComponent {
 
     protected readonly GRAPH_IDS = GRAPH_IDS;
 
-    protected onSave(format: 'json' | 'pnml') {
-        this._petriNetSavingService.savePetriNet(format);
-    }
-
-    protected onGraphExport(graph: string, format: 'png' | 'jpeg') {
-        this._displayService.triggerDownload(format, graph);
+    protected onGraphExport(graph: GRAPH_IDS, format: 'json' | 'pnml' | 'png' | 'jpeg') {
+        if (format === 'png' || format === 'jpeg') {
+            this._displayService.triggerDownload(format, graph);
+            return;
+        }
+        switch (graph) {
+            case GRAPH_IDS.PETRI_NET:
+                this._petriNetSavingService.savePetriNet(format);
+                return;
+            case GRAPH_IDS.REACHABILITY:
+                this._reachabilityGraphSavingService.saveReachabilityGraphAsPetriNet(format);
+                return;
+        }
     }
 
     protected isGraphAvailable(graph: string) {

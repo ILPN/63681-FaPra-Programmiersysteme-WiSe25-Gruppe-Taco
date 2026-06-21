@@ -15,11 +15,11 @@ export const viewBoxValues: ViewBox = {
 export const PLACE_RADIUS = 25;
 export const TRANSITION_SIZE = 60;
 
-export const GRAPH_IDS = {
-    PETRI_NET: 'petri-net',
-    REACHABILITY: 'reachability-graph',
-    PROCESS_NET: 'process-net',
-} as const;
+export enum GRAPH_IDS {
+    PETRI_NET = 'petri-net',
+    REACHABILITY = 'reachability-graph',
+    PROCESS_NET = 'process-net',
+}
 
 export type GraphId = (typeof GRAPH_IDS)[keyof typeof GRAPH_IDS];
 

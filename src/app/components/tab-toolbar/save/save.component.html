@@ -7,11 +7,11 @@
     <mat-icon>save_alt</mat-icon>
 </button>
 <mat-menu #saveMenu="matMenu">
-    <button mat-menu-item (click)="onSave('json')">
+    <button mat-menu-item [matMenuTriggerFor]="jsonMenu">
         <mat-icon class="icon-json">data_object</mat-icon>
         <span>{{ 'SAVE_AS_JSON' | translate }}</span>
     </button>
-    <button mat-menu-item (click)="onSave('pnml')">
+    <button mat-menu-item [matMenuTriggerFor]="pnmlMenu">
         <mat-icon class="icon-pnml">device_hub</mat-icon>
         <span>{{ 'SAVE_AS_PNML' | translate }}</span>
     </button>
@@ -22,6 +22,50 @@
     <button mat-menu-item [matMenuTriggerFor]="jpegMenu">
         <mat-icon class="icon-jpeg">broken_image</mat-icon>
         <span>{{ 'SAVE_AS_JPEG' | translate }}</span>
+    </button>
+</mat-menu>
+
+<!-- JSON Submenu -->
+<mat-menu #jsonMenu="matMenu">
+    <button mat-menu-item (click)="onGraphExport(GRAPH_IDS.PETRI_NET, 'json')">
+        <mat-icon>device_hub</mat-icon>
+        <span>{{ 'EXPORT_PETRI_NET' | translate }}</span>
+    </button>
+    <button
+        mat-menu-item
+        (click)="onGraphExport(GRAPH_IDS.REACHABILITY, 'json')"
+        [disabled]="!isGraphAvailable(GRAPH_IDS.REACHABILITY)">
+        <mat-icon>account_tree</mat-icon>
+        <span>{{ 'EXPORT_REACHABILITY_GRAPH' | translate }}</span>
+    </button>
+    <button
+        mat-menu-item
+        (click)="onGraphExport(GRAPH_IDS.PROCESS_NET, 'json')"
+        [disabled]="!isGraphAvailable(GRAPH_IDS.PROCESS_NET)">
+        <mat-icon>timeline</mat-icon>
+        <span>{{ 'EXPORT_PROCESS_NET' | translate }}</span>
+    </button>
+</mat-menu>
+
+<!-- PNML Submenu -->
+<mat-menu #pnmlMenu="matMenu">
+    <button mat-menu-item (click)="onGraphExport(GRAPH_IDS.PETRI_NET, 'pnml')">
+        <mat-icon>device_hub</mat-icon>
+        <span>{{ 'EXPORT_PETRI_NET' | translate }}</span>
+    </button>
+    <button
+        mat-menu-item
+        (click)="onGraphExport(GRAPH_IDS.REACHABILITY, 'pnml')"
+        [disabled]="!isGraphAvailable(GRAPH_IDS.REACHABILITY)">
+        <mat-icon>account_tree</mat-icon>
+        <span>{{ 'EXPORT_REACHABILITY_GRAPH' | translate }}</span>
+    </button>
+    <button
+        mat-menu-item
+        (click)="onGraphExport(GRAPH_IDS.PROCESS_NET, 'pnml')"
+        [disabled]="!isGraphAvailable(GRAPH_IDS.PROCESS_NET)">
+        <mat-icon>timeline</mat-icon>
+        <span>{{ 'EXPORT_PROCESS_NET' | translate }}</span>
     </button>
 </mat-menu>
 
