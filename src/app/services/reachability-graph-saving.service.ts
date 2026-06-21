@@ -44,6 +44,7 @@ export class ReachabilityGraphSavingService extends SavingService {
         // generate all transitions and arcs
         const transitions: DiagramTransition[] = [];
         const arcs: DiagramArc[] = [];
+        let aCounter = 0;
         for (const t of rg.edges) {
             const inP = places.get(t.source);
             if (inP === undefined) {
@@ -55,8 +56,8 @@ export class ReachabilityGraphSavingService extends SavingService {
             }
             const tid = `t${counter++}`;
 
-            const inA = new DiagramArc(`a${counter++}`, inP.id, tid);
-            const outA = new DiagramArc(`a${counter++}`, tid, outP.id);
+            const inA = new DiagramArc(`a${aCounter++}`, inP.id, tid);
+            const outA = new DiagramArc(`a${aCounter++}`, tid, outP.id);
 
             transitions.push(new DiagramTransition(tid, t.displayLabel, [inP], [outP], [inA], [outA]));
             arcs.push(inA, outA);

@@ -40,6 +40,9 @@ export class SaveComponent {
             case GRAPH_IDS.REACHABILITY:
                 this._reachabilityGraphSavingService.saveReachabilityGraphAsPetriNet(format);
                 return;
+            case GRAPH_IDS.PROCESS_NET:
+                throw new Error('Process net export not implemented');
+                return;
         }
     }
 
